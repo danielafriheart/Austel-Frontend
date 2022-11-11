@@ -145,7 +145,7 @@ export default function MiniDrawer() {
                         <MenuIcon />
                     </IconButton>
                     <div className="flex justify-between w-[100%] items-center">
-                        <Link to='/dashboard/home' className='font-bold'>Austel</Link>
+                        <Link to='/dashboard/home' className='font-bold text-xl'>Austel</Link>
                         <Nav />
                     </div>
                 </Toolbar>
