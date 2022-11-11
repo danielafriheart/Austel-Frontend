@@ -27,6 +27,11 @@ export default function Login() {
     document.title = "Austel | Login"
   })
 
+  const handleLogin = () => {
+    navigate("/dashboard/home")
+  }
+
+
   return (
     <div className='flex h-screen p-2 bg-house-pattern bg-tr-white justify-center bg-no-repeat bg-center bg-cover bg-blend-color-burn items-center'>
       <img draggable="false" className='fixed top-auto' width={615} src={irrImg} alt="bg" />
@@ -55,7 +60,7 @@ export default function Login() {
             <span className='text-[14px] text-gray-400 ml-1'>Remember me</span>
           </div>
 
-          <button className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit'>Login</button>
+          <button onClick={handleLogin} className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit'>Login</button>
 
         </form>
         <span className="text-sm mt-2 text-gray-400">Don't have an account? <Link to="/Signup" className="text-austel-green">Register</Link></span>
