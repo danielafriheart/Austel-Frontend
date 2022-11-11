@@ -23,7 +23,7 @@ function Payment() {
         initialValues: {
             paymentTitle: '',
             paymentDescription: '',
-            amount: ''
+            paymentAmount: ''
         }
     })
     // console.log(values);
@@ -31,12 +31,6 @@ function Payment() {
         setPaymentStructures(e => [...e, values]);
         handleClose()
     }
-    console.log(paymentStructures);
-    const structure = paymentStructures.map(payment => {
-        return (
-            <div>{payment.paymentDescription}</div>
-        )
-    })
 
     const [open, setOpen] = React.useState(false);
 
@@ -91,12 +85,12 @@ function Payment() {
                             <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-amount"
-                                value={values.amount}
-                                onChange={handleChange('amount')}
+                                value={values.paymentAmount}
+                                onChange={handleChange}
                                 startAdornment={<InputAdornment position="start">#</InputAdornment>}
                                 label="Amount"
                                 type='number'
-                                name='amount'
+                                name='paymentAmount'
                             />
                         </FormControl>
                     </div>
@@ -115,14 +109,41 @@ function Payment() {
                 </header>
 
                 <div>
-                    {structure}
-                    {/* {structureList} */}
+                    {
+                        paymentStructures.length > 0 &&
+                        <table class="table table-auto w-full mt-10">
+                            <thead>
+                                <tr className='text-left bg-gray-200'>
+                                    <th className='py-3 px-5'>S/N</th>
+                                    <th>Payment Tile</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    paymentStructures.map((payment, i) => {
+                                        return (
+                                            <tr className={`${i % 2 !== 0 && 'bg-gray-100'} border-b`}>
+                                                <td className='py-3 px-5'>{i + 1}</td>
+                                                <td>{payment.paymentTitle}</td>
+                                                <td>{payment.paymentDescription}</td>
+                                                <td>{payment.paymentAmount}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    }
                 </div>
-
-                <div className="pb-5 flex items-center justify-center border-dashed border-green-500  border text-green-500 mt-5 flex-col hover:cursor-pointer" onClick={handleClickOpen}>
-                    <img src={PayImg} alt="" className='w-[15%]' />
-                    +  Create Payment Structure
-                </div>
+                {
+                    paymentStructures < 1 &&
+                    <div className="pb-5 flex items-center justify-center border-dashed border-green-500  border text-green-500 mt-5 flex-col hover:cursor-pointer" onClick={handleClickOpen}>
+                        <img src={PayImg} alt="" className='w-[15%]' />
+                        +  Create Payment Structure
+                    </div>
+                }
             </div>
         </>
     )
