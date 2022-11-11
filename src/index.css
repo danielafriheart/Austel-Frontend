@@ -41,3 +41,7 @@ input[type="file"] {
   cursor: pointer;
 }
 
+.active {
+  color: #0FA958;
+  background-color: red !important;
+}
