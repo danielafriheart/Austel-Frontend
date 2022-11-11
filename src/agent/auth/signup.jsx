@@ -3,10 +3,14 @@ import { Checkbox, TextField } from '@mui/material'
 import irrImg from '../../assets/auth-bg.svg'
 import { useEffect } from 'react'
 import { useState } from 'react';
+
 // Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+
+// SignUp schema
+import { signUpSchema } from '../../schemas/validation.schema';
 
 function Signup() {
     const navigate = useNavigate();
@@ -17,25 +21,33 @@ function Signup() {
     // End of page title
 
     // Formik form
-    const { values, handleChange, handleBlur, handleSubmit } = useFormik(
+    const onSubmit = () => {
+        console.log('Submitted');
+    }
+
+    const { values, handleChange, handleBlur, handleSubmit, errors } = useFormik(
         {
             initialValues: {
                 name: '',
                 email: '',
                 password: '',
-                confirmPassword: ''
-            }
-        }
-    )
-    console.log(values);
+                confirmPassword: '',
+                stateOfOrigin: '',
+                address: ''
+            },
+            validationSchema: signUpSchema,//Validation Schema from yup
+            onSubmit,
+        })
+
+    console.log(errors);
     // End of formik form
 
     const [step, setStep] = useState(1);
 
     // Form Submit
-    const handleSignUp = () => {
-        navigate("/login")
-    }
+    // const handleSignUp = () => {
+    //     navigate("/login")
+    // }
 
     return (
         <div className='flex h-screen p-2 bg-house-pattern bg-tr-white justify-center bg-no-repeat bg-center bg-cover bg-blend-color-burn items-center'>
@@ -45,7 +57,6 @@ function Signup() {
                 <span className='text-austel-green text-sm block mb-3 font-semibold'>Get started on Austel</span>
 
                 <form action="" onSubmit={handleSubmit}>
-
                     {
                         step === 1 &&
                         <div className="w-full" id='form1'>
@@ -88,12 +99,11 @@ function Signup() {
                                 <p id="myFile" name="filename" className='w-full text-end text-gray-400' >  {values?.kyc?.name}</p>
                             </div>
 
-                            <button className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit' onClick={handleSignUp}>{step === 2 && "Create Account"}</button>
+                            <button className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit'>{step === 2 && "Create Account"}</button>
 
                             <span className="text-sm mt-2 text-gray-400">Already have an account? <a className='text-austel-green' href="/login">Login</a></span>
                         </div>
                     }
-
                 </form>
             </div>
         </div>

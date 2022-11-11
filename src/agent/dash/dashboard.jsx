@@ -128,6 +128,7 @@ export default function MiniDrawer() {
 
     return (
         <Box sx={{ display: 'flex' }}>
+            
             <CssBaseline />
             <AppBar position="fixed" open={open}>
                 <Toolbar className='flex'>
@@ -149,6 +150,7 @@ export default function MiniDrawer() {
                     </div>
                 </Toolbar>
             </AppBar>
+
             <Drawer variant="permanent" open={open} className='shadow-xl'>
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
@@ -182,9 +184,21 @@ export default function MiniDrawer() {
                         <ListItemText primary='Tenants' />
                     </ListItem>
 
-                    <ListItem button component={Link} to='/dashboard/payments'
+                    <ListItem button component={Link} to='/dashboard/properties'
                         selected={selectedIndex === 3}
                         onClick={(e) => handleListItemClick(e, 3)}
+                    >
+                        <Tooltip title="Property" placement='right' arrow>
+                            <ListItemIcon>
+                                <CreditCardIcon />
+                            </ListItemIcon>
+                        </Tooltip>
+                        <ListItemText primary='Property' secondary='Structure' />
+                    </ListItem>
+
+                    <ListItem button component={Link} to='/dashboard/payments'
+                        selected={selectedIndex === 4}
+                        onClick={(e) => handleListItemClick(e, 4)}
                     >
                         <Tooltip title="Payment" placement='right' arrow>
                             <ListItemIcon>
@@ -195,8 +209,8 @@ export default function MiniDrawer() {
                     </ListItem>
 
                     <ListItem button component={Link} to='/dashboard/message'
-                        selected={selectedIndex === 4}
-                        onClick={(e) => handleListItemClick(e, 4)}
+                        selected={selectedIndex === 5}
+                        onClick={(e) => handleListItemClick(e, 5)}
                     >
                         <Tooltip title="Messages" placement="right" arrow>
                             <ListItemIcon>
@@ -209,8 +223,8 @@ export default function MiniDrawer() {
                 <Divider />
                 <List>
                     <ListItem button component={Link} to="/dashboard/logs"
-                        selected={selectedIndex === 5}
-                        onClick={(e) => handleListItemClick(e, 5)}
+                        selected={selectedIndex === 6}
+                        onClick={(e) => handleListItemClick(e, 6)}
                     >
                         <Tooltip title="Activity Logs" placement="right" arrow>
                             <ListItemIcon>
@@ -221,8 +235,8 @@ export default function MiniDrawer() {
                     </ListItem>
 
                     <ListItem button component={Link} to="/dashboard/letters"
-                        selected={selectedIndex === 6}
-                        onClick={(e) => handleListItemClick(e, 6)}
+                        selected={selectedIndex === 7}
+                        onClick={(e) => handleListItemClick(e, 7)}
                     >
                         <Tooltip title="Letters" placement="right" arrow>
                             <ListItemIcon>
@@ -233,8 +247,8 @@ export default function MiniDrawer() {
                     </ListItem>
 
                     <ListItem button component={Link} to='/dashboard/settings'
-                        selected={selectedIndex === 7}
-                        onClick={(e) => handleListItemClick(e, 7)}
+                        selected={selectedIndex === 8}
+                        onClick={(e) => handleListItemClick(e, 8)}
                     >
                         <Tooltip title="Settings" placement="right" arrow>
                             <ListItemIcon>
@@ -245,12 +259,13 @@ export default function MiniDrawer() {
                     </ListItem>
                 </List>
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+
+            <div className='p-3 w-screen '>
                 <DrawerHeader />
-                <Typography paragraph className='p-0'>
+                <Typography paragraph className='p-0 w-full'>
                     <Outlet />
                 </Typography>
-            </Box>
+            </div>
         </Box >
     );
 }

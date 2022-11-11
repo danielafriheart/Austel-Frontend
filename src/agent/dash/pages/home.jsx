@@ -16,12 +16,12 @@ import TransitionalModal from "../components/transitional";
 export default function home() {
     return (
         <>
-            <div className="px-10 flex justify-between items-center">
+            <div className="md:px-10 sm:px-3 flex justify-between items-center">
                 <h1 className="font-bold text-xl">  Dashboard</h1>
                 <TransitionalModal />
             </div>
             <div className='grid lg:grid-cols-[65%,35%] md:grid-cols-[repeat(1,100%)]'>
-                <div className="py-5 px-[3em] border-r-2">
+                <div className="py-5 md:px-[3em] sm:px-3 border-r-2">
 
                     {/* Chart section */}
                     <div className='pb-10 w-full'>
@@ -29,9 +29,9 @@ export default function home() {
                         <Chart />
                     </div>
 
-                    <div className='pt-5'>
+                    <div className='pt-5 w-full'>
                         <p className='font-medium mb-9'>Your Property at a Glance</p>
-                        <div className=' grid grid-cols-3 gap-10 text-center'>
+                        <div className=' grid grid-cols-3 sm:gap-5 md;gap-10 text-center'>
                             <Card className='bg-austel-green-300' title='Tenancy' icon={<GroupsIcon className='text-austel-green-300' fontSize='large' />} />
                             <Card className='bg-[#23C4E8]' title='Finance' icon={<PaymentsIcon className='text-[#23C4E8]' fontSize='large' />} />
                             <Card className='bg-[#EB042D]' title='Complaints' icon={<ModeEditOutlineIcon className='text-[#EB042D]' fontSize='large' />} />
@@ -41,7 +41,7 @@ export default function home() {
 
 
                 {/* Grid col 2 */}
-                <div className="py-5 px-10">
+                <div className="py-5 lg:px-10 md:px-3">
                     <img src={phone} alt="" className='w-[336.48px] mx-auto my-[2em]' />
                     <div className='bg-austel-green-200 py-10 px-[2em] w-full mx-auto rounded-2xl'>
                         <h1 className='text-2xl font-medium'>Notifications</h1>

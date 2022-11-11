@@ -100,7 +100,7 @@ function Payment() {
                     <Button onClick={handleSave}>Save</Button>
                 </DialogActions>
             </Dialog >
-            <div className='px-10 min-h-[100vh]'>
+            <div className='lg:px-10 md:px-3 min-h-[100vh]'>
                 <header className='flex items-center justify-between'>
                     <h1 className="font-bold text-xl">  Payment Structures</h1>
                     <button className='rounded-full px-4 py-2 text-austel-green border-2 border-austel-green font-bold' onClick={handleClickOpen}>
@@ -140,7 +140,7 @@ function Payment() {
                 {
                     paymentStructures < 1 &&
                     <div className="pb-5 flex items-center justify-center border-dashed border-green-500  border text-green-500 mt-5 flex-col hover:cursor-pointer" onClick={handleClickOpen}>
-                        <img src={PayImg} alt="" className='w-[15%]' />
+                        <img src={PayImg} alt="" className='lg:w-[15%] sm:w-[25%]' />
                         +  Create Payment Structure
                     </div>
                 }
