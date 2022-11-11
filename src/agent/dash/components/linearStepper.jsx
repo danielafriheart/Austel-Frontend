@@ -218,51 +218,6 @@ export default function HorizontalLinearStepper() {
                                     <p className="text-[0.8em] mt-2">Enter the number of each of the following rooms in your unit and select  any additional rooms in the unit</p>
                                 </div>
                                 <UnitAccordion />
-                                {/* <Box
-                                    component="form"
-                                    sx={{
-                                        '& > :not(style)': { width: '100%' },
-                                    }}
-                                    noValidate
-                                    autoComplete="off"
-                                >
-                                    <div className="w-100 gap-3 grid grid-cols-[60%,38%]">
-                                        <TextField id="standard-basic" label="Property Name" variant="outlined" name='propertyName' value={values.propertyName} onChange={handleChange} />
-                                        <TextField id="standard-basic" label="Street Address" variant="outlined" name='streetAddress' value={values.streetAddress} onChange={handleChange} />
-                                    </div>
-                                    <div className="w-100 gap-3 gap-y-3 grid grid-cols-3 mt-7">
-                                        <TextField id="standard-basic" label="No. of Units" variant="outlined" name='numberOfUnits' value={values.numberOfUnits} onChange={handleChange} />
-
-                                        <TextField id="standard-basic" label="Country" variant="outlined" name='country' value={values.country} onChange={handleChange} />
-
-                                        <Box sx={{ minWidth: 120 }}>
-                                            <FormControl fullWidth >
-                                                <InputLabel id="demo-simple-select-label">State</InputLabel>
-                                                <Select
-                                                    labelId="demo-simple-select-label"
-                                                    id="demo-simple-select"
-                                                    value={values.state}
-                                                    label="State"
-                                                    onChange={handleChange}
-                                                    MenuProps={{
-                                                        style: {
-                                                            maxHeight: 300,
-                                                        },
-                                                    }}
-                                                >
-                                                    {statesItemList}
-                                                </Select>
-                                            </FormControl>
-                                        </Box>
-
-                                        <TextField id="standard-basic" label="City" variant="outlined" onChange={handleChange} />
-                                        <TextField id="standard-basic" label="Zip" variant="outlined" onChange={handleChange} />
-
-                                    </div>
-                                    <div className="w-100 gap-3 grid grid-cols-[60%,38%] mt-7">
-                                    </div>
-                                    <TextField id="standard-basic" label="Comment" variant="standard" sx={{ marginTop: '4em', marginBottom: '1em' }} />
-                                </Box> */}
                             </div>
                         }
 

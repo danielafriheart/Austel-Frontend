@@ -5,22 +5,37 @@ import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useFormik } from 'formik';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
+import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import { useState } from 'react';
 
 
-function FormDialog() {
+function Payment() {
+    const [paymentStructures, setPaymentStructures] = useState([]);
     // Formik
     const { values, handleChange, } = useFormik({
         initialValues: {
-
+            paymentTitle: '',
+            paymentDescription: '',
+            amount: ''
         }
+    })
+    // console.log(values);
+    const handleSave = () => {
+        setPaymentStructures(e => [...e, values]);
+        handleClose()
+    }
+    console.log(paymentStructures);
+    const structure = paymentStructures.map(payment => {
+        return (
+            <div>{payment.paymentDescription}</div>
+        )
     })
 
     const [open, setOpen] = React.useState(false);
@@ -33,18 +48,22 @@ function FormDialog() {
         setOpen(false);
     };
 
-    return (
-        <div>
+    // Payment Types
+    const paymentTitle = ['Rent', 'Maintenance', 'Light', 'Security']
+    const selectPayment = paymentTitle.map(paymentType => {
+        return (
+            <MenuItem value={paymentType}>{paymentType}</MenuItem>
+        )
+    })
 
-            <button className='rounded-full px-4 py-2 text-austel-green border-2 border-austel-green font-bold' onClick={handleClickOpen}>
-                CREATE PAYMENT
-            </button>
+    return (
+        <>
             <Dialog open={open} onClose={handleClose}
                 sx={{
                     "& .MuiDialog-container": {
                         "& .MuiPaper-root": {
                             width: "100%",
-                            maxWidth: "40%",
+                            maxWidth: "60%",
                             // minWidth: "45%"  // Set your width here
                         },
                     },
@@ -52,50 +71,60 @@ function FormDialog() {
             >
                 <DialogTitle>Create Structure</DialogTitle>
                 <DialogContent>
-                    <Box sx={{ minWidth: 120 }}>
-                        <FormControl fullWidth >
-                            <InputLabel id="demo-simple-select-label">State</InputLabel>
+                    <div className="pt-5 gap-2 flex items-center">
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Payment Title</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={values.state}
-                                name='state'
-                                label="State"
+                                label="Age"
                                 onChange={handleChange}
-                                MenuProps={{
-                                    style: {
-                                        maxHeight: 300,
-                                    },
-                                }}
+                                name='paymentTitle'
                             >
-                                {/* {statesItemList} */}
+                                {selectPayment}
                             </Select>
                         </FormControl>
-                    </Box>
-                    <TextField id="standard-basic" label="Street Address" type='text' variant="outlined" name='streetAddress' value={values.streetAddress} onChange={handleChange} />
 
+                        <TextField fullWidth id="standard-basic" label="Payment Description" type='text' variant="outlined" name='paymentDescription' value={values.streetAddress} onChange={handleChange} />
+
+                        <FormControl fullWidth>
+                            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                            <OutlinedInput
+                                id="outlined-adornment-amount"
+                                value={values.amount}
+                                onChange={handleChange('amount')}
+                                startAdornment={<InputAdornment position="start">#</InputAdornment>}
+                                label="Amount"
+                                type='number'
+                                name='amount'
+                            />
+                        </FormControl>
+                    </div>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subscribe</Button>
+                    <Button onClick={handleSave}>Save</Button>
                 </DialogActions>
             </Dialog >
-        </div >
-    );
-}
+            <div className='px-10 min-h-[100vh]'>
+                <header className='flex items-center justify-between'>
+                    <h1 className="font-bold text-xl">  Payment Structures</h1>
+                    <button className='rounded-full px-4 py-2 text-austel-green border-2 border-austel-green font-bold' onClick={handleClickOpen}>
+                        CREATE PAYMENT
+                    </button>
+                </header>
 
-function Payment() {
-    return (
-        <div className='px-10 min-h-[100vh]'>
-            <header className='flex items-center justify-between'>
-                <h1 className="font-bold text-xl">  Payment Structures</h1>
-                <FormDialog />
-            </header>
-            <div className="pb-5 flex items-center justify-center border-dashed border-green-500  border text-green-500 mt-5 flex-col hover:cursor-pointer">
-                <img src={PayImg} alt="" className='w-[15%]' />
-                +  Create Payment Structure
+                <div>
+                    {structure}
+                    {/* {structureList} */}
+                </div>
+
+                <div className="pb-5 flex items-center justify-center border-dashed border-green-500  border text-green-500 mt-5 flex-col hover:cursor-pointer" onClick={handleClickOpen}>
+                    <img src={PayImg} alt="" className='w-[15%]' />
+                    +  Create Payment Structure
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

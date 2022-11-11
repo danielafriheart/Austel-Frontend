@@ -6,11 +6,11 @@ import irrImg from '../../assets/auth-bg.svg'
 import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
-import { Formik, useFormik } from 'formik'
+import { useFormik } from 'formik'
 
 export default function Login() {
   // Beginning of formik form
-  const { values, handleBlur, handleChange, errors } = useFormik({
+  const { values, handleBlur, handleChange } = useFormik({
 
     initialValues: {
       email: '',
