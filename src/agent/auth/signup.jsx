@@ -6,14 +6,14 @@ import { useState } from 'react';
 
 // Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 // SignUp schema
 import { signUpSchema } from '../../schemas/validation.schema';
 
 function Signup() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     // Page title
     useEffect(() => {
         document.title = "Austel | Create account"

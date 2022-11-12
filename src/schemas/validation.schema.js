@@ -8,3 +8,8 @@ export const signUpSchema = yup.object().shape({
     stateOfOrigin: yup.string().min(1).required('Required'),
     address: yup.string().required('Required')
 })
+
+export const signInSchema = yup.object().shape({
+    email: yup.string().email().required('This field is required'),
+    password: yup.string().min(5).required('This field is required')
+})

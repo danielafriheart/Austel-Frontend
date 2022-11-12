@@ -7,6 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import { useFormik } from 'formik'
+import { signInSchema } from '../../schemas/validation.schema'
 
 export default function Login() {
   // Beginning of formik form
@@ -15,7 +16,8 @@ export default function Login() {
     initialValues: {
       email: '',
       password: ''
-    }
+    },
+    validationSchema: signInSchema
 
   });
   console.log(values);
