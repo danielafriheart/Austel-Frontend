@@ -25,7 +25,7 @@ export default function AlertDialogSlide() {
 
     return (
         <div>
-            <button className='rounded-full px-4 py-2 text-white hover:bg-austel-green bg-[#2E8B57] shadow-xl' onClick={handleClickOpen}> <AddTwoToneIcon /> Add Property
+            <button className='rounded-full px-4 py-2 text-white hover:bg-austel-green bg-[#2E8B57] shadow-xl' onClick={handleClickOpen}> <AddTwoToneIcon /> Create Property
             </button>
             <Dialog
                 open={open}
@@ -33,16 +33,6 @@ export default function AlertDialogSlide() {
                 keepMounted
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
-
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "40%",
-                            // minWidth: "45%"  // Set your width here
-                        },
-                    },
-                }}
             >
                 <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">

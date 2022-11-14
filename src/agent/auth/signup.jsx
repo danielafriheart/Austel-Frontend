@@ -6,14 +6,14 @@ import { useState } from 'react';
 
 // Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 // SignUp schema
 import { signUpSchema } from '../../schemas/validation.schema';
 
 function Signup() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     // Page title
     useEffect(() => {
         document.title = "Austel | Create account"
@@ -45,9 +45,9 @@ function Signup() {
     const [step, setStep] = useState(1);
 
     // Form Submit
-    // const handleSignUp = () => {
-    //     navigate("/login")
-    // }
+    const handleSignUp = () => {
+        navigate("/login")
+    }
 
     return (
         <div className='flex h-screen p-2 bg-house-pattern bg-tr-white justify-center bg-no-repeat bg-center bg-cover bg-blend-color-burn items-center'>
@@ -60,8 +60,12 @@ function Signup() {
                     {
                         step === 1 &&
                         <div className="w-full" id='form1'>
-                            <CustomTextField label="Name" name="name" value={values.name} onChange={handleChange} onBlur={handleBlur} />
-                            <CustomTextField label="Email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                            <TextField label="Name" variant='standard' name="name" value={values.name} onChange={handleChange} onBlur={handleBlur} className={`${errors.name ? 'error' : ''} w-full`} required />
+                            <br /><br />
+
+                            <TextField variant='standard' label="Email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} className={`${errors.name ? 'error' : ''} w-full`} required />
+                            <br /><br />
+
                             <CustomTextField label="Password" name="password" type="password" value={values.password} onChange={handleChange} onBlur={handleBlur} />
                             <CustomTextField label="Confirm Password" name="confirmPassword" type="password" value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} />
 
@@ -99,9 +103,9 @@ function Signup() {
                                 <p id="myFile" name="filename" className='w-full text-end text-gray-400' >  {values?.kyc?.name}</p>
                             </div>
 
-                            <button className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit'>{step === 2 && "Create Account"}</button>
+                            <button className='text-white bg-austel-green py-3 px-20 my-2 block mx-auto text-sm' type='submit' onClick={handleSignUp}>{step === 2 && "Create Account"}</button>
 
-                            <span className="text-sm mt-2 text-gray-400">Already have an account? <a className='text-austel-green' href="/login">Login</a></span>
+                            <span className="text-sm mt-2 text-gray-400">Already have an account? <Link className='text-austel-green' to="/login">Login</Link></span>
                         </div>
                     }
                 </form>

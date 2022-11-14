@@ -22,9 +22,13 @@ export default function HorizontalLinearStepper() {
         {
             initialValues: {
                 propertyName: '',
+                propertyType: '',
+                propertyState: '',
                 streetAddress: '',
                 numberOfUnits: '',
                 country: '',
+                city: '',
+                zipCode: '',
             },
         }
     )
@@ -87,7 +91,7 @@ export default function HorizontalLinearStepper() {
     // End of states in  Nigeria
 
     // Property type
-    const propertyType = ['', 'Hostel', 'Bungalow', 'Duplex', 'Flat Apartment', 'Shops', 'Hall']
+    const propertyType = ['Hostel', 'Bungalow', 'Duplex', 'Flat Apartment', 'Shops', 'Hall']
     const propertyTypeList = propertyType.map(propertyItem => {
         return (
             <MenuItem value={propertyItem}>{propertyItem}</MenuItem>
@@ -156,7 +160,6 @@ export default function HorizontalLinearStepper() {
                                                     id="demo-simple-select"
                                                     name='propertyType'
                                                     value={values.propertyType}
-                                                    label="State"
                                                     onChange={handleChange}
                                                     MenuProps={{
                                                         style: {
@@ -178,9 +181,8 @@ export default function HorizontalLinearStepper() {
                                                 <Select
                                                     labelId="demo-simple-select-label"
                                                     id="demo-simple-select"
-                                                    value={values.state}
-                                                    name='state'
-                                                    label="State"
+                                                    value={values.propertyState}
+                                                    name='propertyState'
                                                     onChange={handleChange}
                                                     MenuProps={{
                                                         style: {
@@ -200,7 +202,7 @@ export default function HorizontalLinearStepper() {
 
                                         <TextField id="standard-basic" label="Country" variant="outlined" name='country' value={values.country} onChange={handleChange} />
 
-                                        <TextField id="standard-basic" label="City" variant="outlined" onChange={handleChange} />
+                                        <TextField id="standard-basic" label="City" variant="outlined" onChange={handleChange} value={values.city} name='city' />
                                         <TextField id="standard-basic" label="Zip" variant="outlined" type='number' value={values.zipCode} name='zipCode' onChange={handleChange} />
 
                                     </div>

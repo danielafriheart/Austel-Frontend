@@ -21,15 +21,13 @@ function navbar() {
                     '.MuiOutlinedInput-notchedOutline': { border: 0 },
                     "& .MuiSvgIcon-root": {
                         color: "white",
-                    },
+                    }
                 }}
             >
-                <MenuItem value="">
-                    <em>None</em>
-                </MenuItem>
-                <MenuItem component={Link} to='/refrer'>Twenty</MenuItem>
-                <MenuItem value={21}>Twenty one</MenuItem>
-                <MenuItem value={22}>Twenty one and a half</MenuItem>
+                <MenuItem component={Link} to='/dashboard/settings'> My Profile</MenuItem>
+                <MenuItem component={Link} to='/dashboard/settings'> Messages</MenuItem>
+                <MenuItem component={Link} to='/dashboard/settings'> My Profile</MenuItem>
+                <MenuItem component={Link} to='/dashboard/settings'> Logout</MenuItem>
             </Select>
         </div >
     )

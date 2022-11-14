@@ -29,6 +29,7 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DescriptionIcon from '@mui/icons-material/Description';
 import { Link } from 'react-router-dom';
+import VillaIcon from '@mui/icons-material/Villa';
 // import { ListItemButton } from '@mui/material';
 
 
@@ -145,13 +146,13 @@ export default function MiniDrawer() {
                         <MenuIcon />
                     </IconButton>
                     <div className="flex justify-between w-[100%] items-center">
-                        <Link to='/dashboard/home' className='font-bold text-xl'>Austel</Link>
+                        <Link to='/dashboard/home' className='font-bold'>Austel</Link>
                         <Nav />
                     </div>
                 </Toolbar>
             </AppBar>
 
-            <Drawer variant="permanent" open={open} className='shadow-xl'>
+            <Drawer variant="permanent" open={open}>
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -188,12 +189,12 @@ export default function MiniDrawer() {
                         selected={selectedIndex === 3}
                         onClick={(e) => handleListItemClick(e, 3)}
                     >
-                        <Tooltip title="Property" placement='right' arrow>
+                        <Tooltip title="Properties" placement='right' arrow>
                             <ListItemIcon>
-                                <CreditCardIcon />
+                                <VillaIcon />
                             </ListItemIcon>
                         </Tooltip>
-                        <ListItemText primary='Property' secondary='Structure' />
+                        <ListItemText primary='Properties' secondary='Structure' />
                     </ListItem>
 
                     <ListItem button component={Link} to='/dashboard/payments'

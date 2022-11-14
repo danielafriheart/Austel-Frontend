@@ -6,6 +6,7 @@ import Dashboard from './agent/dash/dashboard';
 import Home from './agent/dash/pages/home';
 import Error from './errorPage';
 import Payment from './agent/dash/pages/payment';
+import Properties from './agent/dash/pages/properties';
 
 
 
@@ -21,6 +22,7 @@ function App() {
         [
           <Route path='/dashboard/home' element={<Home />} />,
           <Route path='/dashboard/payments' element={<Payment />} />,
+          <Route path='/dashboard/properties' element={<Properties />} />,
           // Error page
           <Route path='/dashboard/*' element={<Error />} />
         ]
