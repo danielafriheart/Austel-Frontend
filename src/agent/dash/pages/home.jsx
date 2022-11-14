@@ -16,12 +16,12 @@ import TransitionalModal from "../components/transitional";
 export default function home() {
     return (
         <React.Fragment>
-            <div className="md:px-10 sm:px-3 flex justify-between items-center pb-3 border-b-2">
+            <div className="md:px-10 sm:px-3 flex justify-between items-center py-3 border-b-2 bg-white">
                 <h1 className="font-bold">  Dashboard</h1>
                 <TransitionalModal />
             </div>
             <div className='grid lg:grid-cols-[65%,35%] md:grid-cols-[repeat(1,100%)]'>
-                <div className="py-5 md:px-[3em] sm:px-3 border-r-2">
+                <div className="py-5 md:px-[3em] sm:px-3 border-r-2  bg-white">
 
                     {/* Chart section */}
                     <div className='pb-10 w-full'>
