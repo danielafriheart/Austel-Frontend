@@ -15,9 +15,9 @@ import TransitionalModal from "../components/transitional";
 
 export default function home() {
     return (
-        <React.Fragment className='bg-red-900'>
-            <div className="md:px-10 sm:px-3 flex justify-between items-center">
-                <h1 className="font-bold text-xl">  Dashboard</h1>
+        <React.Fragment>
+            <div className="md:px-10 sm:px-3 flex justify-between items-center pb-3 border-b-2">
+                <h1 className="font-bold">  Dashboard</h1>
                 <TransitionalModal />
             </div>
             <div className='grid lg:grid-cols-[65%,35%] md:grid-cols-[repeat(1,100%)]'>
@@ -25,12 +25,12 @@ export default function home() {
 
                     {/* Chart section */}
                     <div className='pb-10 w-full'>
-                        <p className='mb-5'>Income/Expenditure Analytics</p>
+                        <p className='mb-5 font-light text-sm text-gray-400'>Income/Expenditure Analytics</p>
                         <Chart />
                     </div>
 
                     <div className='pt-5 w-full'>
-                        <p className='mb-9'>Your Property at a Glance</p>
+                        <p className='mb-9 font-light text-sm text-gray-400'>Your Property at a Glance</p>
                         <div className=' grid grid-cols-3 sm:gap-5 md;gap-10 text-center'>
                             <Card className='bg-austel-green-300' title='Tenancy' icon={<GroupsIcon className='text-austel-green-300' fontSize='large' />} />
                             <Card className='bg-[#23C4E8]' title='Finance' icon={<PaymentsIcon className='text-[#23C4E8]' fontSize='large' />} />

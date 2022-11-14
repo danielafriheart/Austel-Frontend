@@ -129,7 +129,7 @@ export default function MiniDrawer() {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            
+
             <CssBaseline />
             <AppBar position="fixed" open={open}>
                 <Toolbar className='flex'>
@@ -263,7 +263,7 @@ export default function MiniDrawer() {
 
             <div className='p-3 w-screen '>
                 <DrawerHeader />
-                <Typography paragraph className='p-0 w-full'>
+                <Typography paragraph className='p-0 w-full bg-[#FBFBFB]'>
                     <Outlet />
                 </Typography>
             </div>

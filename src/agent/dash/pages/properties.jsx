@@ -6,8 +6,8 @@ import propertyImg from "./../../../assets/property.jpg";
 function Properties() {
     return (
         <>
-            <div className="md:px-10 sm:px-3 flex justify-between items-center">
-                <h1 className="font-bold text-xl">  Properties</h1>
+            <div className="md:px-10 sm:px-3 flex justify-between items-center pb-3 border-b-2">
+                <h1 className="font-bold">  Properties</h1>
                 <TransitionalModal />
             </div>
             <div className='py-5 md:px-10 sm:px-3 '>

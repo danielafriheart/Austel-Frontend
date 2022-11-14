@@ -3,7 +3,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import Slide from '@mui/material/Slide';
-import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
+import VillaIcon from '@mui/icons-material/Villa';
 import HorizontalLinearStepper from './linearStepper';
 
 
@@ -25,7 +25,7 @@ export default function AlertDialogSlide() {
 
     return (
         <div>
-            <button className='rounded-full px-4 py-2 text-white hover:bg-austel-green bg-[#2E8B57] shadow-xl' onClick={handleClickOpen}> <AddTwoToneIcon /> Create Property
+            <button className='px-4 py-2 text-white hover:bg-austel-green bg-[#2E8B57] flex items-center gap-2' onClick={handleClickOpen}> <VillaIcon /> <p className='font-light text-sm'>Create Property</p>
             </button>
             <Dialog
                 open={open}

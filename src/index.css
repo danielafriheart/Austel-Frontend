@@ -1,6 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/graphik');
 * {
   /* outline: 1px solid silver; */
+  font-family: 'Graphik', sans-serif;
 }
+
 
 
 @tailwind base;
@@ -14,7 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #FBFBFB; */
+  /* background-color:; */
 }
 
 code {
@@ -50,7 +53,3 @@ input[type="file"] {
 .error {
   border-bottom: 1px solid #fc8181 !important;
 }
-
-/* p {
-  color: lightgray !important;
-} */
