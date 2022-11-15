@@ -263,7 +263,7 @@ export default function MiniDrawer() {
 
             <div className='w-screen '>
                 <DrawerHeader />
-                <Typography paragraph className='p-0 w-full bg-[#F5F6F8]'>
+                <Typography paragraph className='p-0 w-full bg-[#F7F9F9]'>
                     <Outlet />
                 </Typography>
             </div>

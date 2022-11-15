@@ -25,7 +25,7 @@ export default function AlertDialogSlide() {
 
     return (
         <div>
-            <button className='px-4 py-2 text-white hover:bg-austel-green bg-[#2E8B57] flex items-center gap-2' onClick={handleClickOpen}> <VillaIcon /> <p className='font-light text-sm'>Create Property</p>
+            <button className='px-4 py-2  border hover:bg-gray-200 bg-gray-100 flex items-center gap-2' onClick={handleClickOpen}> <VillaIcon /> <p className='font-light text-sm'>Create Property</p>
             </button>
             <Dialog
                 open={open}

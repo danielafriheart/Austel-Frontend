@@ -41,7 +41,7 @@ export default function home() {
 
 
                 {/* Grid col 2 */}
-                <div className="py-5 lg:px-10 md:px-3">
+                <div className="py-5 lg:px-10 md:px-3 lg:bg-transparent bg-white">
                     <img src={phone} alt="" className='w-[336.48px] mx-auto my-[2em]' />
                     <div className='bg-austel-green-200 py-10 px-[2em] w-full mx-auto rounded-2xl'>
                         <h1 className=' font-medium'>Notifications</h1>

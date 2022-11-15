@@ -25,7 +25,7 @@ export default function HorizontalLinearStepper() {
                 propertyType: '',
                 propertyState: '',
                 streetAddress: '',
-                numberOfUnits: '',
+                // numberOfUnits: '',
                 country: '',
                 city: '',
                 zipCode: '',
@@ -198,8 +198,6 @@ export default function HorizontalLinearStepper() {
                                     </div>
 
                                     <div className="w-100 gap-3 gap-y-3 grid grid-cols-3 mt-5">
-                                        <TextField id="standard-basic" label="No. of Units" variant="outlined" name='numberOfUnits' value={values.numberOfUnits} onChange={handleChange} type='number' />
-
                                         <TextField id="standard-basic" label="Country" variant="outlined" name='country' value={values.country} onChange={handleChange} />
 
                                         <TextField id="standard-basic" label="City" variant="outlined" onChange={handleChange} value={values.city} name='city' />
