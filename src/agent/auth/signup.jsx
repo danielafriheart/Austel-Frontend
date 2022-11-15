@@ -11,7 +11,7 @@ import { useFormik } from 'formik';
 
 // SignUp schema
 import { signUpSchema } from '../../schemas/validation.schema';
-import SnackBar from '../dash/components/snackBar';
+// import SnackBar from '../dash/components/snackBar';
 
 function Signup() {
     const navigate = useNavigate();
